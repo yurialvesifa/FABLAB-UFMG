@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FabLab — Escola de Engenharia UFMG </title>
+  <meta name="description" content="FabLab da Escola de Engenharia da UFMG — prototipagem, corte a laser, impressão 3D, eletrônica e mais."/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container navwrap">
+      <div class="brand">
+         <img src="Imagens/escola_eng_2.PNG" alt="Logo Engenharia" />
+        <div>
+          <h1>FabLab — Escola de Engenharia UFMG</h1>
+                  </div>
+      </div>
+      <nav class="navlinks">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#equipamentos">Equipamentos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+  
+<!--inicio do site com Imagem futurista -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h2>FabLab UFMG</h2>
+        <p>Espaço de prototipagem, manufatura digital e experimentação aberto à comunidade da Escola de Engenharia.</p>
+        <div class="actions">
+          <a href="#equipamentos" class="btn btn-primary">Ver equipamentos</a>
+          <a href="#servicos" class="btn btn-ghost">Serviços e agendamentos</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="FABLAB.png" alt="FABLAB workplace" style="max-width:100%; height:auto;" />
+        </div>
+     </section>
+
+     <!-- Parágrafo depois da imagem do inicio do site -->
+  <section id="sobre" class="section">
+    <div class="container grid-3">
+      <div class="col-span-2">
+        <h3>Sobre o FabLab</h3>
+        <p>
+          O FabLab da Escola de Engenharia da UFMG promove aprendizado mão-na-massa, cultura maker e inovação, oferecendo infraestrutura para corte a laser, usinagem CNC, impressão 3D, eletrônica, digitalização 3D e prototipagem rápida.
+        </p>
+        <ul class="bullets">
+        <li>Acesso a equipamentos profissionais</li>
+        <li>Agendamento por projeto e treinamentos</li>
+        <li>Apoio a disciplinas e pesquisa</li>
+      </ul>
+    </div>
+  </section>
+
+<!-- Área onde os serviços sao descritos -->
+  <section id="servicos" class="section section-plain">
+  <div class="container">
+    <h3>Serviços</h3>
+    <div class="cards">
+      <article class="card">
+        <img class="card-icon" src="Imagens/training-program.png" alt="Treinamentos" />
+        <h4>Treinamentos</h4>
+        <p>Introdução às máquinas, segurança e boas práticas.</p>
+      </article>
+
+      <article class="card">
+        <img class="card-icon" src="Imagens/product-development.png" alt="Prototipagem" />
+        <h4>Prototipagem</h4>
+        <p>Apoio técnico para corte, gravação, impressão 3D e montagem.</p>
+      </article>
+
+      <article class="card">
+        <img class="card-icon" src="Imagens/3d-file.png" alt="Digitalização 3D" />
+        <h4>Digitalização 3D</h4>
+        <p>Escaneamento de peças e ambientes para engenharia reversa.</p>
+      </article>
+
+      <article class="card">
+        <img class="card-icon" src="Imagens/circuit.png" alt="Eletrônica" />
+        <h4>Eletrônica</h4>
+        <p>Medições, desenvolvimento e testes de circuitos.</p>
+      </article>
+
+      <article class="card">
+        <img class="card-icon" src="Imagens/sawing.png" alt="Marcenaria" />
+        <h4>Marcenaria</h4>
+        <p>Acabamento, cortes e montagem de mobiliário e mockups.</p>
+      </article>
+
+      <article class="card">
+        <img class="card-icon" src="Imagens/sewing-machine.png" alt="Têxtil e Sublimação" />
+        <h4>Têxtil &amp; Sublimação</h4>
+        <p>Personalização de materiais com prensa térmica.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Área do site dedicada aos equipamentos que existem no FABLAB -->
+
+  <section id="equipamentos" class="section">
+    <div class="container">
+      <div class="equip-header">
+        <div>
+          <h3>Equipamentos</h3>
+                  </div>
+        <div class="filters">
+          <input id="search" type="text" placeholder="Buscar por nome, patrimônio ou categoria" />
+          <select id="category"></select>
+        </div>
+      </div>
+      <div id="grid" class="equip-grid"></div>
+    </div>
+  </section>
+
+  <!-- Área do site dedicada a entrar em contato com o time -->
+  <section id="contato" class="section section-plain">
+    <div class="container contact-grid">
+      <div>
+        <h3>Contato e acesso</h3>
+        <p>Endereço: Escola de Engenharia, UFMG — Av. Antônio Carlos, 6627, Pampulha, Belo Horizonte - MG.</p>
+        <p>E-mail: <a href="mailto:fablab@ufmg.br">fablab@ufmg.br</a></p>
+        <p>Horário de funcionamento: seg–sex, 9h às 18h.</p>
+      </div>
+      <form class="card" onsubmit="event.preventDefault()">
+        <div class="row-2">
+          <input placeholder="Nome" />
+          <input placeholder="E-mail" />
+        </div>
+        <input placeholder="Assunto" />
+        <textarea rows="4" placeholder="Mensagem"></textarea>
+        <button class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footwrap">
+      <p>© <span id="year"></span> FabLab — Escola de Engenharia UFMG.</p>
+      </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

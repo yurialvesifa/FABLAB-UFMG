@@ -1,0 +1,233 @@
+:root{
+  --bg:#f8fafc; --text:#0f172a; --muted:#64748b; --primary:#059669; --primary-600:#047857; --card:#ffffff; --b:#e2e8f0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial}
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+.muted{color:var(--muted)}
+
+.navbar{position:sticky;top:0;background:#ffffffcc;backdrop-filter:blur(6px);border-bottom:1px solid var(--b);z-index:10}
+.navwrap{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.brand h1{font-size:18px;margin:0}
+.logo{display:inline-flex;width:40px;height:40px;border-radius:16px;align-items:center;justify-content:center;background:var(--primary);color:#fff;font-weight:700}
+.navlinks{display:flex;gap:20px}
+.navlinks a{color:inherit;text-decoration:none}
+.navlinks a:hover{color:var(--primary-600)}
+
+.hero{background:linear-gradient(180deg,#ecfdf5,transparent)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:56px 0}
+.hero-grid h2{font-size:42px;margin:0 0 8px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.btn{display:inline-block;border-radius:14px;padding:10px 16px;border:1px solid var(--b);text-decoration:none}
+.btn-primary{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-600)}
+.btn-ghost:hover{background:#fff}
+.hero-img{position:relative}
+.hero-img img{width:100%;height:320px;object-fit:cover;border-radius:22px;box-shadow:0 8px 24px #0001}
+.chip{position:absolute;left:-12px;bottom:-12px;background:#fff;border:1px solid var(--b);box-shadow:0 6px 18px #0001;border-radius:14px;padding:8px 12px;font-size:12px}
+
+.section{padding:48px 0}
+.section-plain{background:#fff;border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
+.grid-3{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+.col-span-2{grid-column:auto}
+.bullets{margin:0;padding-left:18px}
+
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--bg);border:1px solid var(--b);border-radius:16px;padding:16px;box-shadow:0 4px 10px #00000010}
+.card h4{margin:0 0 8px}
+
+.equip-header{display:flex;gap:16px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
+.filters{display:flex;gap:10px}
+.filters input,.filters select{border:1px solid var(--b);border-radius:12px;padding:10px 12px}
+
+.equip-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+.item{background:#fff;border:1px solid var(--b);border-radius:18px;overflow:hidden;box-shadow:0 4px 12px #0001;transition:box-shadow .2s transform .2s}
+.item:hover{box-shadow:0 8px 20px #0002;transform:translateY(-1px)}
+.item .thumb{aspect-ratio:16/10;background:#f1f5f9;overflow:hidden}
+.item .thumb img{width:100%;height:100%;object-fit:cover}
+.item .body{padding:12px}
+.item .meta{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}
+.item .meta a{color:#065f46}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.contact-grid input,.contact-grid textarea{border:1px solid var(--b);border-radius:12px;padding:10px 12px;width:100%}
+
+.footer{padding:30px 0}
+.footwrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--b);padding-top:12px}
+
+/* responsive */
+@media (max-width: 900px){
+  .hero-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .equip-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .row-2{grid-template-columns:1fr}
+}
+@media (max-width: 640px){
+  .hero-grid h2{font-size:34px}
+  .cards,.equip-grid{grid-template-columns:1fr}
+}
+
+/* Centralizar imagem e conteúdo nos cards de Serviços */
+.cards .card {
+  text-align: center;            /* centraliza o h4 e o texto */
+}
+
+.cards .card .card-icon {
+  display: block;                /* permite margin auto funcionar */
+  margin: 0 auto 12px;           /* centraliza e dá espaçamento abaixo */
+  width: 72px;                   /* ajuste conforme o tamanho dos seus ícones */
+  height: 72px;                  /* mantém quadro consistente */
+  object-fit: contain;           /* evita distorção */
+}
+
+/* 1) Caixa da miniatura com tamanho uniforme */
+.item .thumb {
+  height: 200px;                 /* defina a altura que você quer (ex.: 180–240px) */
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+
+  /* centralização e anti-overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;              /* nada passa da caixa */
+}
+
+/* 2) A imagem nunca ultrapassa a caixa e fica centralizada */
+.item .thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;                   /* evita distorção horizontal */
+  height: auto;                  /* evita distorção vertical   */
+  object-fit: contain;           /* mostra toda a imagem sem cortar */
+  object-position: center;       /* centrada */
+  display: block;                /* evita “gap” de inline elements */
+}
+
+/* --- Guardas gerais contra overflow --- */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;            /* esconde qualquer sobra acidental */
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+  display: block;                /* evita “gaps” de inline images */
+}
+
+/* --- Grids fluidos que não estouram no mobile --- */
+.cards,
+.equip-grid {
+  /* cards se auto-reorganizam sem criar scroll lateral */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* --- Navbar: permite quebra/oculta no mobile --- */
+.navwrap { flex-wrap: wrap; }    /* deixa o conteúdo quebrar linha se precisar */
+
+@media (max-width: 640px) {
+  .navlinks { display: none; }   /* esconde links do topo no mobile (evita estourar) */
+}
+
+/* --- Hero chip: remover deslocamento negativo no mobile --- */
+@media (max-width: 640px) {
+  .chip {
+    left: 8px;                   /* antes tinha left: -12px; isso podia gerar overflow */
+    right: 8px;                  /* garante que fique dentro da tela */
+  }
+}
+
+/* --- Miniaturas dentro dos cards (evita estourar a caixa) --- */
+.item .thumb {
+  height: 200px;                 /* define a altura do quadro */
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;              /* nada passa da caixa */
+}
+
+.item .thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;           /* mostra a imagem inteira, sem cortar */
+  object-position: center;
+}
+
+/* --- Serviços: 3 colunas no desktop, centralizado --- */
+.cards {
+  display: grid;
+  gap: 20px;
+  /* força exatamente 3 colunas no desktop */
+  grid-template-columns: repeat(3, 1fr);
+  /* se as colunas tiverem largura fixa, mantém o grid centralizado */
+  justify-content: center;
+}
+
+/* largura fixa elegante para cada card (opcional, ajuda a centralizar visualmente) */
+.cards .card {
+  max-width: 320px;     /* ajuste a gosto (280–360px) */
+  width: 100%;
+  margin: 0 auto;       /* garante centralização dentro da célula */
+  text-align: center;   /* título e texto centralizados */
+}
+
+/* ícone acima do título centralizado e dimensionado */
+.cards .card .card-icon {
+  display: block;
+  width: 72px;          /* ajuste a gosto */
+  height: 72px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+}
+
+/* Responsivo: 2 colunas em tablets, 1 no mobile */
+@media (max-width: 900px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .cards .card { max-width: 400px; }
+}
+@media (max-width: 600px) {
+  .cards { grid-template-columns: 1fr; }
+  .cards .card { max-width: 480px; }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* texto | imagem */
+  gap: 24px;
+  align-items: center;            /* alinha verticalmente */
+}
+
+.hero-img {
+  display: flex;
+  justify-content: center;        /* centraliza a imagem na coluna */
+  align-items: center;
+}
+
+.hero-img img {
+  display: block;
+  max-width: 520px;               /* limite de largura no desktop */
+  width: 100%;
+  height: auto;
+  object-fit: contain;            /* não distorce a imagem */
+  object-position: center;
+}
+
+/* Responsivo: empilha no mobile */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-img img {
+    max-width: 100%;
+    max-height: none;             /* no mobile, use altura natural/fluida */
+  }
+}
+
